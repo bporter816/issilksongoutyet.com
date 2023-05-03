@@ -10,9 +10,9 @@
         font-family: 'Cinzel', serif;
       }
       .container {
-        display: flex;
         width: 100vw;
         height: 100vh;
+        display: flex;
         justify-content: center;
         align-items: center;
       }
@@ -41,7 +41,7 @@
           color = 'green';
         }
         statusElem.innerHTML = data['coming_soon'] ? 'NO' : 'YES';
-        dateElem.innerHTML = `Release date: ${data['date']}`;
+        dateElem.innerHTML = data['date'] === 'To be announced' ? '' : `Release date: ${data['date']}`;
         statusElem.style.color = color;
         dateElem.style.color = color;
       }
