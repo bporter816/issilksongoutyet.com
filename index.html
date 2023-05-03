@@ -6,7 +6,6 @@
     <style>
       body {
         background-color: black;
-        color: red;
         font-size: 100px;
         font-family: 'Cinzel', serif;
       }
@@ -33,8 +32,18 @@
         const data = await resp.json();
         const statusElem = document.getElementById('status');
         const dateElem = document.getElementById('date');
+        let color = null;
+        if (data['date'] === "To be announced") {
+          color = 'red';
+        } else if (data['coming_soon']) {
+          color = 'yellow';
+        } else {
+          color = 'green';
+        }
         statusElem.innerHTML = data['coming_soon'] ? 'NO' : 'YES';
         dateElem.innerHTML = `Release date: ${data['date']}`;
+        statusElem.style.color = color;
+        dateElem.style.color = color;
       }
       getStatus();
     </script>
