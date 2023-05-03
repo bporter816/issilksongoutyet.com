@@ -11,8 +11,20 @@
         font-family: 'Cinzel', serif;
       }
     </style>
+    <script>
+      async function getStatus() {
+        const resp = await fetch('https://vjjmzgkbhnwijg55ypw3p4k7f40tlqua.lambda-url.us-east-1.on.aws');
+        const data = await resp.json();
+        const statusElem = document.getElementById('status');
+        const dateElem = document.getElementById('date');
+        statusElem.innerHTML = data['coming_soon'] ? 'NO' : 'YES';
+        dateElem.innerHTML = `Release date: ${data['date']}`;
+      }
+      getStatus();
+    </script>
   </head>
   <body>
-    <h1>NO</h1>
+    <h1 id="status"></h1>
+    <h3 id="date"></h3>
   </body>
 </html>
