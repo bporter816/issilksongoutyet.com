@@ -10,6 +10,22 @@
         font-size: 100px;
         font-family: 'Cinzel', serif;
       }
+      .container {
+        display: flex;
+        width: 100vw;
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+      }
+      .text {
+        text-align: center;
+      }
+      h1 {
+        font-size: 5rem;
+      }
+      h3 {
+        font-size: 3rem;
+      }
     </style>
     <script>
       async function getStatus() {
@@ -24,7 +40,11 @@
     </script>
   </head>
   <body>
-    <h1 id="status"></h1>
-    <h3 id="date"></h3>
+    <div class="container">
+      <div class="item">
+        <h1 class="text" id="status"></h1>
+        <h3 class="text" id="date"></h3>
+      </div>
+    </div>
   </body>
 </html>
