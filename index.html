@@ -41,7 +41,7 @@
           color = 'green';
         }
         statusElem.innerHTML = data['coming_soon'] ? 'NO' : 'YES';
-        dateElem.innerHTML = data['date'] === 'To be announced' ? '' : `Release date: ${data['date']}`;
+        dateElem.innerHTML = data['date'] === 'To be announced' || !data['coming_soon'] ? '' : `Release date: ${data['date']}`;
         statusElem.style.color = color;
         dateElem.style.color = color;
       }
