@@ -55,11 +55,11 @@
           YES
           {% endif %}
         </h1>
+        {% if site.data.steam.date != "To be announced" and site.data.steam.coming_soon %}
         <h2 class="text">
-          {% if site.data.steam.date != "To be announced" and site.data.steam.coming_soon %}
           Release date: {{ site.data.steam.date }}
-          {% endif %}
         </h2>
+        {% endif %}
       </div>
     </div>
   </body>
