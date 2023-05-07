@@ -2,6 +2,7 @@
 ---
 
 <!DOCTYPE html>
+<html lang="en">
   <head>
     <title>Is Silksong Out Yet?</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,6 +15,7 @@
         font-size: 100px;
         font-family: 'Cinzel', serif;
       }
+
       .container {
         width: 100vw;
         height: 100vh;
@@ -21,6 +23,7 @@
         justify-content: center;
         align-items: center;
       }
+
       .text {
         text-align: center;
 
@@ -32,10 +35,12 @@
         color: green;
         {% endif %}
       }
+
       h1 {
         font-size: 5rem;
       }
-      h3 {
+
+      h2 {
         font-size: 3rem;
       }
     </style>
@@ -50,11 +55,11 @@
           YES
           {% endif %}
         </h1>
-        <h3 class="text">
+        <h2 class="text">
           {% if site.data.steam.date != "To be announced" and site.data.steam.coming_soon %}
           Release date: {{ site.data.steam.date }}
           {% endif %}
-        </h3>
+        </h2>
       </div>
     </div>
   </body>
