@@ -10,11 +10,14 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet">
     <style>
-      body {
+      * {
         margin: 0;
+      }
+
+      body {
         background-color: black;
         font-family: 'Cinzel', serif;
-        font-weight: normal;
+        line-height: 1.5;
       }
 
       .container {
@@ -38,11 +41,13 @@
       }
 
       h1 {
-        font-size: 25vw;
+        font-weight: normal;
+        font-size: 25vmin;
       }
 
       h2 {
-        font-size: 10vw;
+        font-weight: normal;
+        font-size: 10vmin;
       }
     </style>
   </head>
@@ -58,7 +63,9 @@
         </h1>
         {% if site.data.steam.date != "To be announced" and site.data.steam.coming_soon %}
         <h2 class="text">
-          Release date: {{ site.data.steam.date }}
+          Release date:
+          <br>
+          {{ site.data.steam.date }}
         </h2>
         {% endif %}
       </div>
