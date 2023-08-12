@@ -1,4 +1,4 @@
-# issilksongoutyet.com
+# [issilksongoutyet.com](https://www.issilksongoutyet.com)
 
 A website that tracks the release date of [Hollow Knight: Silksong](https://store.steampowered.com/app/1030300/Hollow_Knight_Silksong/).
 
