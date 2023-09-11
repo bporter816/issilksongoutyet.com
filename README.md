@@ -33,3 +33,5 @@ This worked, but still had a couple of undesirable characteristics:
 
 To overcome these issues, I changed the site to build hourly, producing a static site with the Steam API data injected at build time.
 The finished site is built with Jekyll on GitHub Pages and updates via a scheduled GitHub Actions workflow.
+
+https://github.com/bporter816/issilksongoutyet.com/blob/49e8054810977105b6ab0ef0c7d1518fb4c9e6f0/.github/workflows/jekyll-gh-pages.yml#L39-L40
