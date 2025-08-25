@@ -55,7 +55,9 @@
     <div class="container">
       <div>
         <h1 class="text">
-          {% if site.data.steam.coming_soon %}
+          {% if site.data.steam.date != "To be announced" and site.data.steam.coming_soon %}
+          SOON
+          {% elsif site.data.steam.coming_soon %}
           NO
           {% else %}
           YES
