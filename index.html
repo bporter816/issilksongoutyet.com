@@ -16,7 +16,7 @@
         {% elsif site.data.steam.coming_soon %}
         --color: yellow;
         {% else %}
-        --color: green;
+        --color: lime;
         {% endif %}
       }
       * {
@@ -90,7 +90,7 @@
                 const mainEl = document.getElementById("main");
                 mainEl.innerHTML = "YES";
                 const rootEl = document.documentElement;
-                rootEl.style.setProperty("--color", "green");
+                rootEl.style.setProperty("--color", "lime");
                 const items = document.querySelectorAll(".delete-me");
                 items.forEach(item => {
                   item.remove();
