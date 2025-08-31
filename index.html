@@ -67,12 +67,12 @@
           {% endif %}
         </h1>
         {% if site.data.steam.date != "To be announced" and site.data.steam.coming_soon %}
-        <h2 class="text">
+        <h2 class="text delete-me">
           Release date:
           <br>
           {{ site.data.steam.date }}
         </h2>
-        <h2 class="text">
+        <h2 class="text delete-me">
           <div id="countdown"></div>
           <script>
             const targetDate = new Date("2025-09-04T14:00:00.000Z");
@@ -91,6 +91,10 @@
                 mainEl.innerHTML = "YES";
                 const rootEl = document.documentElement;
                 rootEl.style.setProperty("--color", "green");
+                const items = document.querySelectorAll(".delete-me");
+                items.forEach(item => {
+                  item.remove();
+                });
                 clearInterval(timerInterval);
                 return;
               }
