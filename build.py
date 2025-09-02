@@ -5,7 +5,8 @@ import subprocess
 import requests
 
 os.mkdir("_data")
-resp = requests.get("https://store.steampowered.com/api/appdetails?appids=1030300")
+cookies = {"Steam_Language": "english"}
+resp = requests.get("https://store.steampowered.com/api/appdetails?appids=1030300", cookies=cookies)
 resp.raise_for_status()
 data = resp.json()
 with open("_data/steam.json", "w") as f:
