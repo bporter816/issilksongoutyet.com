@@ -11,13 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet">
     <style>
       :root {
-        {% if site.data.steam.date == "To be announced" %}
-        --color: red;
-        {% elsif site.data.steam.coming_soon %}
-        --color: yellow;
-        {% else %}
         --color: lime;
-        {% endif %}
       }
       * {
         margin: 0;
@@ -58,61 +52,8 @@
     <div class="container">
       <div>
         <h1 class="text" id="main">
-          {% if site.data.steam.date != "To be announced" and site.data.steam.coming_soon %}
-          SOON
-          {% elsif site.data.steam.coming_soon %}
-          NO
-          {% else %}
           YES
-          {% endif %}
         </h1>
-        {% if site.data.steam.date != "To be announced" and site.data.steam.coming_soon %}
-        <h2 class="text delete-me">
-          Release date:
-          <br>
-          {{ site.data.steam.date }}
-        </h2>
-        <h2 class="text delete-me">
-          <div id="countdown"></div>
-          <script>
-            const targetDate = new Date("2025-09-04T14:00:00.000Z");
-
-            function pad(n) {
-              return String(n).padStart(2, "0");
-            }
-
-            function updateCountdown() {
-              const now = new Date();
-              const diff = targetDate - now;
-
-
-              if (diff <= 0) {
-                const mainEl = document.getElementById("main");
-                mainEl.innerHTML = "YES";
-                const rootEl = document.documentElement;
-                rootEl.style.setProperty("--color", "lime");
-                const items = document.querySelectorAll(".delete-me");
-                items.forEach(item => {
-                  item.remove();
-                });
-                clearInterval(timerInterval);
-                return;
-              }
-
-              const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-              const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-              const minutes = Math.floor((diff / (1000 * 60)) % 60);
-              const seconds = Math.floor((diff / 1000) % 60);
-
-              const countdownEl = document.getElementById("countdown");
-              countdownEl.innerHTML = `${pad(days)}d ${pad(hours)}h ${pad(minutes)}m ${pad(seconds)}s`;
-            }
-
-            updateCountdown();
-            const timerInterval = setInterval(updateCountdown, 1000);
-          </script>
-        </h2>
-        {% endif %}
       </div>
     </div>
   </body>
